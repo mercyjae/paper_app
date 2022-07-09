@@ -55,7 +55,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(backgroundColor: Colors.transparent,
       elevation: 0,
-      title: BrandName(),centerTitle: true,),
+      title:  BrandName(),
+      centerTitle: true,),
         body:Column(
           children: [
             Container(margin: EdgeInsets.symmetric(horizontal: 20),

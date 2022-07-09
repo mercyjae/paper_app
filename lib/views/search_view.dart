@@ -44,7 +44,14 @@ class _SearchViewState extends State<SearchView> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(backgroundColor: Colors.transparent,
+    return Scaffold(
+      appBar: AppBar(backgroundColor: Colors.transparent,
+      leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       elevation: 0,
       title: BrandName(),centerTitle: true,),
         body:Column(
