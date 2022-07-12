@@ -35,7 +35,6 @@ class _CategoriesState extends State<Categories> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getSearchPhoto(widget.categoriesName);
     // _controller.text = widget.searchData;
@@ -47,7 +46,7 @@ class _CategoriesState extends State<Categories> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           leading: IconButton(
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.pop(context);
             },
@@ -63,6 +62,6 @@ class _CategoriesState extends State<Categories> {
             ),
           ],
         ));
-    ;
+  
   }
 }

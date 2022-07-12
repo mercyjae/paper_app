@@ -59,26 +59,25 @@ class _HomePageState extends State<HomePage> {
       centerTitle: true,),
         body:Column(
           children: [
-            Container(margin: EdgeInsets.symmetric(horizontal: 20),
-              padding:EdgeInsets.symmetric(horizontal: 20),
+            Container(margin: const EdgeInsets.symmetric(horizontal: 20),
+              padding:const EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(12),
-                color:Color(0xfff5f8fD)),
+                color:const Color(0xfff5f8fD)),
               child: Row(children: [
                 Expanded(child: TextField(controller: _controller,
-                  decoration: InputDecoration(hintText: "Search",
+                  decoration: const InputDecoration(hintText: "Search",
                 border: InputBorder.none),)
                 ),
                 IconButton(onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>
                       SearchView(searchData:_controller.text)));
 
-                }, icon: Icon(Icons.search))
+                }, icon: const Icon(Icons.search))
 
               ],),
             ),
-            SizedBox(height: 20,),
-            Container(
-
+            const SizedBox(height: 20,),
+            SizedBox(
               height: 100,
               // child: ListView.builder(itemCount: categories.length,
               //     shrinkWrap: true,

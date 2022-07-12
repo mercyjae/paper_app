@@ -23,7 +23,7 @@ class _ImageViewState extends State<ImageView> {
       appBar: AppBar(
         elevation: 0,
         leading: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
             color: Colors.black,
           ),
@@ -41,7 +41,7 @@ class _ImageViewState extends State<ImageView> {
             children: [
               Hero(
                 tag: widget.imgUrl,
-                child: Container(
+                child: SizedBox(
                         width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height,
                     child: Image.network(
@@ -62,8 +62,9 @@ class _ImageViewState extends State<ImageView> {
                         child: Container(
                             width: MediaQuery.of(context).size.width / 2,
                             decoration: BoxDecoration(
-                              border: Border.all(color: Color(0xff1C1B1B),width: 3),
-                                borderRadius: BorderRadius.circular(25),color: Color(0xff1C1B1B).withOpacity(0.8),
+                              border: Border.all(color: const Color(0xff1C1B1B),width: 3),
+                                borderRadius: BorderRadius.circular(25),
+                                color: const Color(0xff1C1B1B).withOpacity(0.8),
                                 // gradient: LinearGradient(colors:
                                 // [
                                 //   Color(0x36FFFFFF),
@@ -73,7 +74,8 @@ class _ImageViewState extends State<ImageView> {
                                 //     end: FractionalOffset.bottomRight)
                             ),
                             child: Column(
-                              children: [SizedBox(height: 2,),
+                              children: const [
+                                SizedBox(height: 2,),
                                 Text("Set wallpapers",
                                   style: TextStyle(
                                       color: Colors.white70,
@@ -92,11 +94,11 @@ class _ImageViewState extends State<ImageView> {
                               ],
                             )),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
-                      Text("Cancel"),
-                      SizedBox(
+                      const Text("Cancel"),
+                      const SizedBox(
                         height: 50,
                       ),
                     ],

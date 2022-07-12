@@ -1,11 +1,11 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:wallpaper_hub/views/image_view.dart';
 import '../view_model/wallpaper_model.dart';
 
 Widget BrandName(){
   return
-  Text.rich(TextSpan(
+  const Text.rich(TextSpan(
     text: "Wallpaper",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
       children: [
       TextSpan(text: "Hub",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),
@@ -20,22 +20,20 @@ Widget BrandName(){
 }
 
 Widget wallPaperList(List<WallPaperModel> wallpapers, BuildContext context){
-  return Container(child:
-    GridView.count(crossAxisCount: 2,shrinkWrap: true,physics: ClampingScrollPhysics(),
-      childAspectRatio: 1,padding: EdgeInsets.symmetric(horizontal: 16),
-    mainAxisSpacing: 6,crossAxisSpacing: 4,
+  return GridView.count(crossAxisCount: 2,shrinkWrap: true,physics: const ClampingScrollPhysics(),
+    childAspectRatio: 1,padding: const EdgeInsets.symmetric(horizontal: 16),
+  mainAxisSpacing: 6,crossAxisSpacing: 4,
    children: wallpapers.map((wallpaper){
-     // print("CategoryImage: ${wallpaper.src.portrait}");
-      return GridTile(child: GestureDetector(onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>
-            ImageView(imgUrl: wallpaper.src.portrait)));
-      },
-        child: Hero(tag: wallpaper.src.portrait,
-          child: Container(
-            child: ClipRRect(borderRadius: BorderRadius.circular(12),
-                child: Image.network(wallpaper.src.portrait,fit: BoxFit.cover,)),),
-        ),
-      )
-      );
-    }).toList()),);
+   // print("CategoryImage: ${wallpaper.src.portrait}");
+    return GridTile(child: GestureDetector(onTap: (){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>
+          ImageView(imgUrl: wallpaper.src.portrait)));
+    },
+      child: Hero(tag: wallpaper.src.portrait,
+        child: ClipRRect(borderRadius: BorderRadius.circular(12),
+            child: Image.network(wallpaper.src.portrait,fit: BoxFit.cover,)),
+      ),
+    )
+    );
+  }).toList());
 }

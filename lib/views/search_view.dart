@@ -37,7 +37,6 @@ class _SearchViewState extends State<SearchView> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getSearchPhoto(widget.searchData);
    _controller.text = widget.searchData;
@@ -47,7 +46,7 @@ class _SearchViewState extends State<SearchView> {
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.transparent,
       leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -56,22 +55,22 @@ class _SearchViewState extends State<SearchView> {
       title: BrandName(),centerTitle: true,),
         body:Column(
           children: [
-            Container(margin: EdgeInsets.symmetric(horizontal: 20),
-              padding:EdgeInsets.symmetric(horizontal: 20),
+            Container(margin: const EdgeInsets.symmetric(horizontal: 20),
+              padding:const EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(12),
-                  color:Color(0xfff5f8fD)),
+                  color:const Color(0xfff5f8fD)),
               child: Row(children: [
                 Expanded(child: TextField(controller: _controller,
-                  decoration: InputDecoration(hintText: "Search",
+                  decoration: const InputDecoration(hintText: "Search",
                     border: InputBorder.none),)
                 ),
                 IconButton(onPressed: (){
                   getSearchPhoto(_controller.text);
 
-                }, icon: Icon(Icons.search))
+                }, icon: const Icon(Icons.search))
               ],),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Expanded(
               child: wallPaperList(wallpapers, context),
             ),
